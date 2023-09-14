@@ -34,6 +34,8 @@ require('lazy').setup({
   -- Nerdtree
   'nvim-tree/nvim-web-devicons',
   'nvim-tree/nvim-tree.lua',
+  -- Bufferline
+  {'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
   -- Neovim Tmux Navigation
   { 'alexghergh/nvim-tmux-navigation',
     config = function()
@@ -203,6 +205,9 @@ require('lazy').setup({
 -- disable netrw at the very start of your init.lua
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+-- Bufferline
+vim.opt.termguicolors = true
+require("bufferline").setup{}
 
 -- set termguicolors to enable highlight groups
 vim.opt.termguicolors = true
