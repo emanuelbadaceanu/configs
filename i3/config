@@ -184,12 +184,21 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# lock
+bindsym $mod+Ctrl+l exec /home/eb/projects/scripts/i3exit lock /home/eb/Pictures/wallpapers/
+# suspend
+bindsym $mod+Ctrl+s exec /home/eb/projects/scripts/i3exit suspend /home/eb/Pictures/wallpapers/
+
 # hide title bar
 default_border pixel 1
 default_floating_border pixel 1
 
+# Workspace settings
+assign [class="Skype"] $ws10
+
 exec /home/eb/.screenlayout/home.sh
 exec nitrogen --restore
+exec /usr/bin/skypeforlinux
 
 ## Screenshots- https://dev.to/dianjuar/i3wm-screenshot-shortcuts-3n7b
 bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date)"
